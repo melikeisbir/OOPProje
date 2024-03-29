@@ -2,7 +2,9 @@
 
 using OOPProje.Classes;
 using OOPProje.Classes.Abstract2;
+using OOPProje.Classes.Abstract3;
 using OOPProje.Classes.Abstracts;
+using OOPProje.Classes.Constructor3;
 using OOPProje.Classes.Constructors;
 using OOPProje.Classes.Contructors2;
 using System.Diagnostics;
@@ -98,7 +100,7 @@ bmw.cokHizliGidiyor("Bmw");
 bmw.havadaUcuyor("Bmw");
 bmw.denizdeYuzuyor("Bmw");
 
-Console.WriteLine("---");
+Console.WriteLine("--------------------");
 
 Matematik mat = new Matematik();
 //1. yöntem
@@ -112,7 +114,7 @@ Console.WriteLine("Çıkar: " + mat.Cikar(45, 25));
 
 Console.WriteLine("Yaşınız: " + i.yasiniz(2001));
 
-Console.WriteLine("------");
+Console.WriteLine("--------------------");
 
 int gelenYas = i.yasiniz(2001);
 Console.WriteLine("Yaşınız: " + i.yasiniz(2001));
@@ -132,7 +134,7 @@ toplamMaas += prog.maasinizNedir();
 toplamMaas += staj.maasinizNedir();
 Console.WriteLine("Toplam maaş: " + toplamMaas);
 
-Console.WriteLine("------");
+Console.WriteLine("--------------------");
 
 CarPorsche pr= new CarPorsche();
 CarMercedes mr= new CarMercedes();
@@ -144,7 +146,7 @@ toplamLitre += mr.litreNedir();
 toplamLitre += bm.litreNedir();
 Console.WriteLine("Harcanan toplam benzin: " + toplamLitre);
 
-Console.WriteLine("------");
+Console.WriteLine("--------------------");
 
 
 new Insan("hakan", "yilmaz"); //constructor nesne
@@ -160,7 +162,7 @@ Kafa kafa = new Kafa(goz, kulak , burun);
 YeniInsan yeni = new YeniInsan(kafa, "mel ", "isb ");
 yeni.ekranaYaz();
 
-Console.WriteLine("------");
+Console.WriteLine("--------------------");
 
 
 Marka marka = new Marka("Bmw ");
@@ -171,3 +173,34 @@ Kasasi kasa = new Kasasi(marka, model, kapisayisi, penceresayisi, " sedan ");
 YeniAraba yeniaraba = new YeniAraba(kasa, 2000000.0);
 yeniaraba.ekranaYazdir();
 
+
+Console.WriteLine("--------------------");
+
+
+Cilek ck = new Cilek();
+Kivi kv = new Kivi();
+Muz mz = new Muz();
+Incir nc = new Incir();
+
+double toplamtutar = 0.0;
+toplamtutar += ck.kasatutari();
+toplamtutar += kv.kasatutari();
+toplamtutar += mz.kasatutari();
+toplamtutar += nc.kasatutari();
+Console.WriteLine("Toplam kasa tutarı: " + toplamtutar);
+
+
+
+Console.WriteLine("--------------------");
+
+Kitap kitap = new Kitap(" ders kitabı");
+Defter defter = new Defter(" küçük");
+Kalem kalem = new Kalem(" çizim kalemi");
+Silgi silgi = new Silgi(2);
+Dosya dosyatipi = new Dosya(kitap, defter, kalem, silgi, " gözlü dosya " );
+YeniCanta yenicanta = new YeniCanta(dosyatipi, 500.0);
+yenicanta.bunuyazdir();
+
+
+
+Console.WriteLine("--------------------");
