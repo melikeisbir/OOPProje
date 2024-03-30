@@ -8,6 +8,9 @@ namespace OOPProje.Classes.Abstracts
 {
     public abstract class Calisan
     {
+        public string adi;
+        public string soyadi;
+        public string departman;
         public abstract double maasinizNedir();
     }
 }

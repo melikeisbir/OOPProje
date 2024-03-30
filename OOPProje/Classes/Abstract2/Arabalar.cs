@@ -8,6 +8,8 @@ namespace OOPProje.Classes.Abstract2
 {
     public abstract class Arabalar
     {
+        public string markasi;
+        public string modeli;
         public abstract double litreNedir();
     }
 }
