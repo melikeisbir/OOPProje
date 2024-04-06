@@ -8,6 +8,9 @@ using OOPProje.Classes.Collections;
 using OOPProje.Classes.Constructor3;
 using OOPProje.Classes.Constructors;
 using OOPProje.Classes.Contructors2;
+using OOPProje.Classes.Overrides;
+using OOPProje.Classes.Solid.OdemeYontemiIyi;
+using OOPProje.Classes.Solid.OdemeYontemiKotu;
 using OOPProje.Classes.Solid.OpenClosedIyi;
 using OOPProje.Classes.Solid.OpenClosedKotu;
 using System.Collections;
@@ -400,3 +403,30 @@ TextLogIyi textLogIyi = new TextLogIyi();
 LoggerIyi loggerIyi = new LoggerIyi(textLogIyi);
 string gelenMesaj = loggerIyi.LogKayit("303 nolu hata kodu oluştu");
 Console.WriteLine(gelenMesaj);
+
+
+Console.WriteLine("--------------------");
+
+
+KrediKarti krediKarti = new KrediKarti();
+MailOrder mailOrder = new MailOrder();
+OdemeIslemi odemeIslemi = new OdemeIslemi(krediKarti, mailOrder);
+odemeIslemi.OdemeYap(OdemeType.MailOrder, 100);
+
+
+Console.WriteLine("--------------------");
+
+
+KrediKartiIyi krediKartiIyi = new KrediKartiIyi();
+MailOrderIyi mailOrderIyi = new MailOrderIyi();
+IyzicoOdemeIyi iyzicoOdemeIyi = new IyzicoOdemeIyi();
+OdemeIslemiIyi odemeIslemiIyi = new OdemeIslemiIyi(iyzicoOdemeIyi);
+string message = odemeIslemiIyi.OdemeYap(300);
+Console.WriteLine(message);
+
+
+Console.WriteLine("--------------------");
+
+
+Child child = new Child();
+child.Yaz();
