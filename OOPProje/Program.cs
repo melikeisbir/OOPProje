@@ -15,6 +15,7 @@ using OOPProje.Classes.Solid.OpenClosedIyi;
 using OOPProje.Classes.Solid.OpenClosedKotu;
 using System.Collections;
 using System.Diagnostics;
+using System.Reflection;
 
 Console.WriteLine("Hello, World!");
 //ClassIsmi nesneadi = new ClassIsmi();
@@ -430,3 +431,25 @@ Console.WriteLine("--------------------");
 
 Child child = new Child();
 child.Yaz();
+
+
+Console.WriteLine("--------------------");
+
+
+//reflection sadece classın adını yazarak runtimeda nesne oluşturabiliyoruz classın tipi belli değil
+Type t = typeof(MyClass);
+
+MethodInfo[] mi = t.GetMethods(); //metod info tipinde array dönüyor
+foreach(MethodInfo info in mi)
+{
+    ParameterInfo[] pi = info.GetParameters();
+    Console.WriteLine("Metod Adı: " + info.Name + " Dönüş Tipi: " + info.ReturnType);
+    if(pi.Length > 0 )
+    {
+        Console.WriteLine("Parametre var");
+    }
+    for(int iX = 0; iX < pi.Length; iX++)
+    {
+        Console.WriteLine(iX + 1 + " . parametrenin dönüş değeri " + pi [iX].ParameterType.Name + " Adı: " + pi [iX].Name);
+    }
+}
